@@ -17,7 +17,8 @@ namespace AppEcommerce.Domain.Interfaces
         /// Atualiza os dados de um pagamento existente.
         Task UpdateAsync(PagamentoEntity pagamento);
 
-        /// Remove um pagamento pelo ID.
-        Task DeleteAsync(int id);
+        // Remove um pagamento pelo ID.
+        Task DeleteAsync(PagamentoEntity pagamento);
+
     }
 }
