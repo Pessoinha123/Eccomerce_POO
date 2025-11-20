@@ -2,7 +2,7 @@ using System.Data;
 
 namespace AppEcommerce.Domain.Entities;
 
-public class Cliente
+public class ClienteEntity
 {
     public int Id { get; private set; }
     public string Nome { get; private set; } = string.Empty;
@@ -10,9 +10,9 @@ public class Cliente
     public string Senha { get; private set; } = string.Empty;
     public string Endereco { get; private set; } = string.Empty;
 
-    protected Cliente() { }
+    protected ClienteEntity() { }
 
-    public Cliente(string nome, string email, string senha, string endereco)
+    public ClienteEntity(string nome, string email, string senha, string endereco)
         => Update(nome, email, senha, endereco);
 
     public void Update(string nome, string email, string senha, string endereco)
