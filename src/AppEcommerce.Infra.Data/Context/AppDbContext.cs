@@ -6,7 +6,9 @@ namespace AppEcommerce.Infra.Data.Context;
 
 public class AppDbContext : DbContext
 {
-    public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) {}
+    public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
+    
+    public DbSet<PagamentoEntity> Pagamentos { get; set; } = null!;
 
     public DbSet<ProdutoEntity> ProdutoEntitys => Set<ProdutoEntity>();
 
