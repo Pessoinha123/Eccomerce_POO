@@ -6,7 +6,11 @@ namespace AppEcommerce.Infra.Data.Context;
 
 public class AppDbContext : DbContext
 {
-    public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) {}
+    public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
+    
+    public DbSet<CarrinhoEntity> Carrinhos { get; set; } = null!;
+
+    public DbSet<ItemCarrinhoEntity> ItensCarrinhos { get; set; } = null!;
 
     public DbSet<ProdutoEntity> ProdutoEntitys => Set<ProdutoEntity>();
 

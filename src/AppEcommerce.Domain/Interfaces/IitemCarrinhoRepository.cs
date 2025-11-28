@@ -18,6 +18,6 @@ namespace AppEcommerce.Domain.Interfaces
         Task UpdateAsync(ItemCarrinhoEntity carrinho);
 
         /// Remove um item de carrinho pelo ID.
-        Task DeleteAsync(int id);
+        Task DeleteAsync(ItemCarrinhoEntity carrinho);
     }
 }

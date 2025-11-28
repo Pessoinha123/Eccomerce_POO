@@ -1,0 +1,37 @@
+using AppEcommerce.Domain.Entities;
+using AppEcommerce.Domain.Interfaces;
+using AppEcommerce.Infra.Data.Context;
+using Microsoft.EntityFrameworkCore;
+
+namespace AppEcommerce.Infra.Data.Repositories;
+
+public class ItemCarrinhoRepository : IItemCarrinhoRepository
+{
+    private readonly AppDbContext _ctx;
+
+    public ItemCarrinhoRepository(AppDbContext ctx) => _ctx = ctx;
+
+    public async Task AddAsync(ItemCarrinhoEntity itemcarrinho)
+    {
+        await _ctx.ItemCarrinhoEntitys.AddAsync(carrinho);
+        await _ctx.SaveChangesAsync();
+    }
+
+    public async Task DeleteAsync(ItemCarrinhoEntity itemcarrinho)
+    {
+        _ctx.ItemCarrinhoEntitys.Remove(itemcarrinho);
+        await _ctx.SaveChangesAsync();
+    }
+
+    public async Task<IEnumerable<ItemCarrinhoEntity>> GetAllAsync()
+        => await _ctx.ItemCarrinhoEntitys.AsNoTracking().ToListAsync();
+
+    public async Task<ItemCarrinhoEntity?> GetByIdAsync(int id)
+        => await _ctx.ItemCarrinhoEntitys.FirstOrDefaultAsync(p => p.Id == id);
+
+    public async Task UpdateAsync(ItemCarrinhoEntity ItemCarrinhoEntity)
+    {
+        _ctx.ItemCarrinhoEntitys.Update(ItemCarrinhoEntity);
+        await _ctx.SaveChangesAsync();
+    }
+}
