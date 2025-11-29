@@ -28,7 +28,7 @@ public class CarrinhoEntity
 
     public void AdicionarItem(int idProduto, int quantidade, decimal precoUnitario)
     {
-        var itemExistente = Itens.FirstOrDefault(i => i.IDProduto == idProduto);
+        var itemExistente = Itens.FirstOrDefault(i => i.ID == idProduto);
         if (itemExistente != null)
         {
             itemExistente.Quantidade += quantidade;
@@ -42,7 +42,7 @@ public class CarrinhoEntity
 
     public void RemoverItem(int idProduto)
     {
-        Itens.RemoveAll(i => i.IDProduto == idProduto);
+        Itens.RemoveAll(i => i.ID == idProduto);
     }
 
     public decimal CalcularTotal()

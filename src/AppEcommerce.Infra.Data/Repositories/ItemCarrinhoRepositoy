@@ -5,11 +5,11 @@ using Microsoft.EntityFrameworkCore;
 
 namespace AppEcommerce.Infra.Data.Repositories;
 
-public class ItemCarrinhoRepository : IItemCarrinhoRepository
+public class ItemCarrinhoRepository : IitemCarrinhoRepository
 {
     private readonly AppDbContext _ctx;
 
-    public ItemCarrinhoRepository(AppDbContext ctx) => _ctx = ctx;
+    public IitemCarrinhoRepository(AppDbContext ctx) => _ctx = ctx;
 
     public async Task AddAsync(ItemCarrinhoEntity itemcarrinho)
     {
